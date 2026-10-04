@@ -1,0 +1,860 @@
+﻿/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #080808;
+    color: white;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+    background-color: #111111;
+    border-bottom: 2px solid #e10600;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    nav h1 {
+        color: #e10600;
+        font-size: 28px;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        nav a:hover {
+            color: #e10600;
+        }
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    padding: 60px;
+    background: linear-gradient( 90deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.4) );
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.small-title {
+    color: #e10600;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.hero h2 {
+    font-size: 80px;
+    margin: 10px 0;
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #e10600;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+    .button:hover {
+        background-color: white;
+        color: #e10600;
+        transform: scale(1.05);
+    }
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    max-width: 900px;
+    margin: auto;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+    .intro h2,
+    .topics h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .intro p {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+
+/* =========================
+   CARDS
+========================= */
+
+.topics {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+    .topics h2 {
+        text-align: center;
+    }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background-color: #151515;
+    padding: 30px;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+    .card:hover {
+        transform: translateY(-10px);
+        border-color: #e10600;
+    }
+
+    .card h3 {
+        color: #e10600;
+        margin-bottom: 15px;
+        font-size: 24px;
+    }
+
+    .card p {
+        color: #cccccc;
+        line-height: 1.6;
+    }
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 80px;
+    padding: 30px;
+    text-align: center;
+    background-color: #111111;
+    color: #888888;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+        nav ul {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+    .hero {
+        padding: 40px 20px;
+        min-height: 500px;
+    }
+
+        .hero h2 {
+            font-size: 55px;
+        }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================
+   DRIVERS PAGE
+========================= */
+
+.page-title {
+    text-align: center;
+    padding: 80px 20px 50px;
+}
+
+    .page-title h2 {
+        font-size: 60px;
+        margin: 10px 0 20px;
+    }
+
+    .page-title p {
+        color: #cccccc;
+        font-size: 18px;
+    }
+
+.drivers {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.driver-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.driver-card {
+    position: relative;
+    background-color: #151515;
+    padding: 30px;
+    min-height: 230px;
+    border: 1px solid #333;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+    .driver-card:hover {
+        transform: translateY(-8px);
+        border-color: #e10600;
+        box-shadow: 0 10px 30px rgba(225, 6, 0, 0.25);
+    }
+
+.driver-number {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 60px;
+    font-weight: bold;
+    color: #252525;
+}
+
+.driver-card h3 {
+    position: relative;
+    margin-top: 70px;
+    font-size: 25px;
+    color: white;
+}
+
+.nationality {
+    margin-top: 12px;
+    color: #bbbbbb;
+}
+
+.team {
+    margin-top: 15px;
+    color: #e10600;
+    font-weight: bold;
+}
+
+@media (max-width: 800px) {
+    .driver-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-title h2 {
+        font-size: 45px;
+    }
+}
+/* =========================
+   TEAMS PAGE
+========================= */
+
+.teams {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* Team Card */
+
+.team-card {
+    position: relative;
+    background-color: #151515;
+    padding: 30px;
+    min-height: 250px;
+    border: 1px solid #333;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+
+    .team-card:hover {
+        transform: translateY(-8px);
+        border-color: #e10600;
+        box-shadow: 0 10px 30px rgba(225, 6, 0, 0.25);
+    }
+
+
+/* Team Number */
+
+.team-number {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 60px;
+    font-weight: bold;
+    color: #252525;
+}
+
+
+/* Team Name */
+
+.team-card h3 {
+    position: relative;
+    margin-top: 70px;
+    font-size: 27px;
+    color: white;
+}
+
+
+/* Country */
+
+.team-country {
+    margin-top: 12px;
+    color: #bbbbbb;
+}
+
+
+/* Drivers */
+
+.team-drivers {
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================
+   CIRCUITS PAGE
+========================= */
+
+.circuits {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.circuit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* Circuit Card */
+
+.circuit-card {
+    position: relative;
+    background-color: #151515;
+    padding: 30px;
+    min-height: 230px;
+    border: 1px solid #333;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+
+    .circuit-card:hover {
+        transform: translateY(-8px);
+        border-color: #e10600;
+        box-shadow: 0 10px 30px rgba(225, 6, 0, 0.25);
+    }
+
+
+/* Circuit Number */
+
+.circuit-number {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 60px;
+    font-weight: bold;
+    color: #252525;
+}
+
+
+/* Circuit Name */
+
+.circuit-card h3 {
+    position: relative;
+    margin-top: 70px;
+    font-size: 24px;
+    color: white;
+}
+
+
+/* Country */
+
+.circuit-country {
+    margin-top: 12px;
+    color: #bbbbbb;
+}
+
+
+/* Location */
+
+.circuit-info {
+    margin-top: 18px;
+    color: #e10600;
+    font-weight: bold;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .circuit-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================
+   TECHNOLOGY PAGE
+========================= */
+
+.technology {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.technology-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+
+/* Technology Card */
+
+.technology-card {
+    background-color: #151515;
+    padding: 30px;
+    min-height: 250px;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+
+    .technology-card:hover {
+        transform: translateY(-8px);
+        border-color: #e10600;
+        box-shadow: 0 10px 30px rgba(225, 6, 0, 0.25);
+    }
+
+
+/* Icon */
+
+.technology-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+
+/* Title */
+
+.technology-card h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+
+/* Description */
+
+.technology-card p {
+    color: #bbbbbb;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CAR SECTION
+========================= */
+
+.car-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+
+    .car-section h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+
+    .car-section > p {
+        max-width: 800px;
+        margin: auto;
+        color: #bbbbbb;
+        line-height: 1.7;
+    }
+
+
+/* Car Parts */
+
+.car-parts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+
+    .car-parts div {
+        background-color: #151515;
+        border: 1px solid #333;
+        padding: 25px;
+        transition: 0.3s;
+    }
+
+
+        .car-parts div:hover {
+            border-color: #e10600;
+            transform: translateY(-5px);
+        }
+
+
+    .car-parts strong {
+        display: block;
+        font-size: 35px;
+        color: #e10600;
+        margin-bottom: 10px;
+    }
+
+
+    .car-parts span {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .technology-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .technology-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .car-parts {
+        grid-template-columns: 1fr;
+    }
+
+    .car-section h2 {
+        font-size: 32px;
+    }
+}
+/* =========================
+   HISTORY PAGE
+========================= */
+
+.history-intro {
+    max-width: 900px;
+    margin: 20px auto 80px;
+    padding: 20px;
+    text-align: center;
+}
+
+    .history-intro h2 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .history-intro p {
+        color: #bbbbbb;
+        line-height: 1.8;
+        font-size: 18px;
+    }
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline-section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+    .timeline-section > h2 {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+
+
+.timeline {
+    position: relative;
+}
+
+
+    /* Vertical Line */
+
+    .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: #e10600;
+    }
+
+
+/* Timeline Item */
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+
+/* Year */
+
+.timeline-year {
+    text-align: right;
+    font-size: 32px;
+    font-weight: bold;
+    color: #e10600;
+    padding-right: 30px;
+}
+
+
+/* Content */
+
+.timeline-content {
+    background-color: #151515;
+    border: 1px solid #333;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+    .timeline-content:hover {
+        transform: translateY(-5px);
+        border-color: #e10600;
+    }
+
+    .timeline-content h3 {
+        margin-bottom: 12px;
+        color: white;
+        font-size: 23px;
+    }
+
+    .timeline-content p {
+        color: #bbbbbb;
+        line-height: 1.6;
+    }
+
+
+/* =========================
+   LEGENDS
+========================= */
+
+.legends-section {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 20px;
+}
+
+    .legends-section > h2 {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+.legends-intro {
+    text-align: center;
+    color: #bbbbbb;
+    margin-bottom: 50px;
+}
+
+
+.legend-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* Legend Card */
+
+.legend-card {
+    position: relative;
+    background-color: #151515;
+    padding: 30px;
+    min-height: 260px;
+    border: 1px solid #333;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+    .legend-card:hover {
+        transform: translateY(-8px);
+        border-color: #e10600;
+        box-shadow: 0 10px 30px rgba(225, 6, 0, 0.25);
+    }
+
+
+/* Legend Number */
+
+.legend-number {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 60px;
+    font-weight: bold;
+    color: #252525;
+}
+
+
+/* Legend Name */
+
+.legend-card h3 {
+    position: relative;
+    margin-top: 70px;
+    font-size: 24px;
+    color: white;
+}
+
+
+/* Country */
+
+.legend-country {
+    margin-top: 12px;
+    color: #e10600;
+    font-weight: bold;
+}
+
+
+/* Description */
+
+.legend-card p:last-child {
+    margin-top: 18px;
+    color: #bbbbbb;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        display: block;
+        padding-left: 35px;
+    }
+
+    .timeline-year {
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .legend-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .history-intro h2,
+    .timeline-section > h2,
+    .legends-section > h2 {
+        font-size: 32px;
+    }
+}
+.card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.f1-logo {
+    width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+}
